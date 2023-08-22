@@ -34,8 +34,14 @@ public class LoginFormController implements Initializable {
     }
 
     @FXML
-    void btnLoginOnAction(ActionEvent event) {
-
+    void btnLoginOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashbord_form.fxml"));
+        AnchorPane anchorPane = loader.load();
+         Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("DASH BORD");
+        stage.centerOnScreen();
     }
 
     @FXML

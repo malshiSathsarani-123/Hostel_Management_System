@@ -15,8 +15,8 @@ import java.util.List;
 @Entity
 public class Room {
     @Id
-    private String roomTypeId;
     private String roomId;
+    private String roomTypeId;
     private String type;
     private Double keyMoney;
     private int qty;
@@ -25,5 +25,13 @@ public class Room {
     private List<Reservation> resList = new ArrayList<>();
     public Room() {
 
+    }
+
+    public Room(String roomTypeId, String roomId, String type, Double keyMoney, int qty) {
+        this.roomTypeId = roomTypeId;
+        this.roomId = roomId;
+        this.type = type;
+        this.keyMoney = keyMoney;
+        this.qty = qty;
     }
 }

@@ -14,17 +14,17 @@
    <children>
       <AnchorPane layoutX="34.0" layoutY="85.0" opacity="0.83" prefHeight="343.0" prefWidth="484.0" style="-fx-background-color: white;" styleClass="edge-button" stylesheets="@../style/style.css">
          <children>
-            <TextField fx:id="txtQty" layoutX="65.0" layoutY="216.0" onAction="#txtQtyOnAction" promptText="Qty" styleClass="text" stylesheets="@../style/style.css" />
-            <TextField fx:id="txtType" layoutX="291.0" layoutY="87.0" onAction="#txtTypeOnAction" promptText="Type" styleClass="text" />
-            <TextField fx:id="txtKeyMoney" layoutX="291.0" layoutY="146.0" onAction="#txtKeyMoneyOnAction" promptText="Key Money" styleClass="text" />
-            <TextField fx:id="txtId" layoutX="65.0" layoutY="146.0" onAction="#txtIdOnAction" promptText="Room Id" styleClass="text" stylesheets="@../style/ManageStudentFormStyle.css" />
+            <TextField fx:id="txtQty" layoutX="65.0" layoutY="216.0" promptText="Qty" styleClass="text" stylesheets="@../style/style.css" />
+            <TextField fx:id="txtType" layoutX="291.0" layoutY="87.0" promptText="Type" styleClass="text" />
+            <TextField fx:id="txtKeyMoney" layoutX="291.0" layoutY="146.0" promptText="Key Money" styleClass="text" />
+            <TextField fx:id="txtId" layoutX="65.0" layoutY="146.0" onAction="#txtIdOnAction" promptText="Room Id" styleClass="text" />
             <JFXComboBox fx:id="cmbTypeId" layoutX="65.0" layoutY="87.0" onAction="#cmbTypeIdOnAction" prefHeight="25.0" prefWidth="183.0" promptText="Room Type Id" />
             <JFXButton layoutX="397.0" layoutY="291.0" onAction="#btnSaveOnAction" style="-fx-background-color: #021426;" text="Save" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="226.0" layoutY="291.0" onAction="#btnClearOnAction" style="-fx-background-color: #021426;" text="Clear" textFill="WHITE">
+            <JFXButton layoutX="35.0" layoutY="289.0" onAction="#btnClearOnAction" style="-fx-background-color: #021426;" text="Clear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -44,14 +44,19 @@
                   <Font name="System Bold Italic" size="17.0" />
                </font>
             </Label>
+            <JFXButton layoutX="212.0" layoutY="291.0" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #021426;" text="Search" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
-      <TableView fx:id="tblRoom" layoutX="622.0" layoutY="100.0" prefHeight="327.0" prefWidth="301.0" stylesheets="@../style/style.css">
+      <TableView fx:id="tblRoom" layoutX="583.0" layoutY="100.0" prefHeight="327.0" prefWidth="340.0" stylesheets="@../style/style.css">
          <columns>
             <TableColumn fx:id="clmId" prefWidth="75.0" text="Room Id" />
-            <TableColumn fx:id="clmType" prefWidth="75.0" text="Type" />
-            <TableColumn fx:id="clmKeyMoney" prefWidth="75.0" text="Key Money" />
-            <TableColumn fx:id="clmQty" prefWidth="75.0" text="Qty" />
+            <TableColumn fx:id="clmType" prefWidth="105.0" text="Type" />
+            <TableColumn fx:id="clmKeyMoney" prefWidth="74.0" text="Key Money" />
+            <TableColumn fx:id="clmQty" prefWidth="85.0" text="Qty" />
          </columns>
          <styleClass>
             <String fx:value="table-cell" />

@@ -92,7 +92,7 @@
                </children>
             </AnchorPane>
          </children></AnchorPane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#021426" height="37.0" stroke="BLACK" strokeType="INSIDE" width="1214.0" />
+      <Rectangle fx:id="root" arcHeight="5.0" arcWidth="5.0" fill="#021426" height="37.0" stroke="BLACK" strokeType="INSIDE" width="1214.0" />
       <Separator layoutX="5.0" layoutY="151.0" opacity="0.38" prefHeight="2.0" prefWidth="233.0" />
       <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="235.0" onAction="#btnStudentOnAction" prefHeight="37.0" prefWidth="208.0" stylesheets="@../style/style.css" text="STUDENT" textFill="WHITE">
          <graphic>
@@ -158,12 +158,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lblTime" layoutX="1098.0" layoutY="4.0" prefHeight="29.0" prefWidth="109.0" textFill="WHITE">
+      <Label fx:id="lblTime" layoutX="1077.0" layoutY="4.0" prefHeight="29.0" prefWidth="97.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="lblDate" layoutX="984.0" layoutY="4.0" prefHeight="29.0" prefWidth="132.0" textFill="WHITE">
+      <Label fx:id="lblDate" layoutX="945.0" layoutY="4.0" prefHeight="29.0" prefWidth="132.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -178,5 +178,14 @@
             <Font name="System Bold Italic" size="21.0" />
          </font>
       </Label>
+      <JFXButton fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="1170.0" layoutY="-3.0" onAction="#btnCloseOnAction" prefHeight="43.0" prefWidth="44.0">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-close-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

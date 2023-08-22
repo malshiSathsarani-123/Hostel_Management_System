@@ -5,8 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import lk.ijse.hostel.utill.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -19,6 +22,9 @@ import java.time.LocalTime;
 import java.util.ResourceBundle;
 
 public class DashboardFormController implements Initializable {
+
+    @FXML
+    public Rectangle root;
 
     @FXML
     private Label lblAcCount;
@@ -111,5 +117,14 @@ public class DashboardFormController implements Initializable {
 
     private void setDate() {
         lblDate.setText(String.valueOf(LocalDate.now()));
+    }
+
+    public void btnCloseOnAction(ActionEvent actionEvent) throws IOException {
+        AnchorPane anchorPane=FXMLLoader.load(getClass().getResource("/view/login_form.fxml"));
+        Scene scene =new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.close();
     }
 }
