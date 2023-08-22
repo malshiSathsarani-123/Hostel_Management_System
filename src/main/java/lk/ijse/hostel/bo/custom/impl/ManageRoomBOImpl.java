@@ -23,7 +23,7 @@ public class ManageRoomBOImpl implements ManageRoomBO {
 
     @Override
     public boolean delete(RoomDto roomDto) {
-        return roomDAO.delete(new Room(roomDto.getRoomTypeId(),roomDto.getRoomId(),roomDto.getType(),roomDto.getKeyMoney(),roomDto.getQty()));
+        return roomDAO.delete(new Room(roomDto.getRoomId()));
     }
 
     @Override

@@ -34,4 +34,8 @@ public class Room {
         this.keyMoney = keyMoney;
         this.qty = qty;
     }
+
+    public Room(String roomId) {
+        this.roomId = roomId;
+    }
 }

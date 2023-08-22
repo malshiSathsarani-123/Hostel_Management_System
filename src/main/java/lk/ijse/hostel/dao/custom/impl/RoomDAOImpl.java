@@ -64,9 +64,6 @@ public class RoomDAOImpl implements RoomDAO {
         Transaction transaction=session.beginTransaction();
         Query query = session.createQuery("from Room ");
         List <Room> roomList = query.list();
-//        for (Room room : roomList) {
-//            System.out.println(student1);
-//        }
         transaction.commit();
         session.close();
 

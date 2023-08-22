@@ -107,13 +107,9 @@ public class ManageRoomFormController implements Initializable {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-        String typeId = (String) cmbTypeId.getSelectionModel().getSelectedItem();
         String id = txtId.getText();
-        String type = txtType.getText();
-        Double keyMoney = Double.valueOf(txtKeyMoney.getText());
-        Integer qty = Integer.valueOf(txtQty.getText());
 
-        boolean isDelete = roomBO.delete(new RoomDto(typeId,id,type,keyMoney,qty));
+        boolean isDelete = roomBO.delete(new RoomDto(id));
         if (isDelete){
             clear();
             new Alert(Alert.AlertType.CONFIRMATION,"DELETED ROOM!!!").show();
@@ -151,7 +147,7 @@ public class ManageRoomFormController implements Initializable {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-        String typeId = (String) cmbTypeId.getSelectionModel().getSelectedItem();
+        String typeId =  cmbTypeId.getSelectionModel().getSelectedItem();
         String id = txtId.getText();
         String type = txtType.getText();
         Double keyMoney = Double.valueOf(txtKeyMoney.getText());

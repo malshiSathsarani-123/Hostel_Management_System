@@ -11,4 +11,8 @@ public class RoomDto {
     private String type;
     private Double keyMoney;
     private int qty;
+
+    public RoomDto(String id) {
+        this.roomId=id;
+    }
 }
