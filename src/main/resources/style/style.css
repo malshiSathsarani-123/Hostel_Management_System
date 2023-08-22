@@ -1,0 +1,52 @@
+.edge-button {
+    -fx-border-radius-color:#0652DD;
+    -fx-background-radius: 40px 40px 40px 40px;
+}
+
+
+.edge-img{
+    -fx-border-radius-color:#0652DD;
+    -fx-background-radius: 40px 40px 40px 40px;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+.text{
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: black;
+}
+#cmbDob{
+    -fx-text-fill: black;
+    -fx-prompt-text-fill: black;
+}
+.button:hover{
+    -fx-background-color: #42a5f5;
+}

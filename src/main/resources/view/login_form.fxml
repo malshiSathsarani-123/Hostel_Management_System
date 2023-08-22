@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" opacity="0.78" prefHeight="365.0" prefWidth="602.0" styleClass="edge-button" stylesheets="@../style/style2.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.LoginFormController">
+   <children>
+      <TextField fx:id="txtUserName" layoutX="35.0" layoutY="125.0" onAction="#txtUserNameOnAction" prefHeight="25.0" prefWidth="246.0" promptText="User Name" styleClass="text-field" stylesheets="@../style/style2.css" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#19232c" height="365.0" layoutX="317.0" stroke="BLACK" strokeType="INSIDE" width="293.0" />
+      <TextField fx:id="txtUserPassword" layoutX="35.0" layoutY="183.0" onAction="#txtUserPasswordOnAction" prefHeight="25.0" prefWidth="246.0" promptText="Password" styleClass="text-field" stylesheets="@../style/style2.css" />
+      <ImageView fitHeight="150.0" fitWidth="155.0" layoutX="385.0" layoutY="108.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/booking.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="202.0" layoutY="233.0" onAction="#btnLoginOnAction" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #00f230;" styleClass="edge-button2" stylesheets="@../style/style2.css" text="Login" />
+      <ImageView fitHeight="69.0" fitWidth="73.0" layoutX="46.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/24-hours.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="124.0" layoutY="43.0" prefHeight="31.0" prefWidth="142.0" text="D24 SYSTEM">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnClose" contentDisplay="GRAPHIC_ONLY" layoutX="562.0" layoutY="6.0" onAction="#btnCloseOnAction" prefHeight="43.0" prefWidth="44.0">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-close-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="53.0" layoutY="233.0" onAction="#btnSignOnAction" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #00f230;" styleClass="edge-button2" stylesheets="@../style/style2.css" text="Sign" />
+   </children>
+</AnchorPane>

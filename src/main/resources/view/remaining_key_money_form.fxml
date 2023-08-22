@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="976.0" style="-fx-background-color: #b388ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.RemainingKeyMoneyFormController">
+   <children>
+      <TableView fx:id="tblRemainKeyMoney" layoutX="467.0" layoutY="123.0" prefHeight="380.0" prefWidth="509.0" stylesheets="@../style/style.css">
+         <columns>
+            <TableColumn fx:id="clmStudentId" prefWidth="77.0" text="Student Id" />
+            <TableColumn fx:id="clmRoomId" prefWidth="74.0" text="Room Id" />
+            <TableColumn fx:id="clmType" prefWidth="85.0" text="Type" />
+            <TableColumn fx:id="clmKeyMoney" prefWidth="100.0" text="Key Money" />
+            <TableColumn fx:id="clmBalance" prefWidth="85.0" text="Balance" />
+            <TableColumn fx:id="clmDate" prefWidth="88.0" text="Date" />
+         </columns>
+         <styleClass>
+            <String fx:value="table-view" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-cell" />
+            <String fx:value="label" />
+            <String fx:value="text" />
+            <String fx:value="table-view" />
+            <String fx:value="label" />
+         </styleClass>
+      </TableView>
+      <AnchorPane layoutX="27.0" layoutY="116.0" prefHeight="389.0" prefWidth="419.0" style="-fx-background-color: white;" styleClass="edge-button" stylesheets="@../style/style.css">
+         <children>
+            <TextField fx:id="txtName" layoutX="239.0" layoutY="92.0" promptText="Name" styleClass="text" />
+            <JFXComboBox fx:id="cmbStudentId" layoutX="31.0" layoutY="92.0" onAction="#cmbStudentIdOnAction" prefHeight="25.0" prefWidth="149.0" promptText="Student Id" />
+            <TextField fx:id="txtRoomId" layoutX="31.0" layoutY="144.0" promptText="Room Id" styleClass="text" />
+            <TextField fx:id="txtType" layoutX="239.0" layoutY="144.0" promptText="Type" styleClass="text" />
+            <TextField fx:id="txtPayAmoub" layoutX="239.0" layoutY="259.0" promptText="Pay Amount" styleClass="text" />
+            <DatePicker fx:id="datePicker" layoutX="31.0" layoutY="202.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" styleClass="text" />
+            <TextField fx:id="txtBalance" layoutX="31.0" layoutY="259.0" promptText="Balance" styleClass="text" />
+            <TextField fx:id="txtKeyMoney" layoutX="239.0" layoutY="196.0" prefHeight="25.0" prefWidth="149.0" promptText="Key Money" styleClass="text" />
+            <Button layoutX="299.0" layoutY="340.0" mnemonicParsing="false" onAction="#btnPayOnAction" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #021426;" text="Pay" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="29.0" layoutY="28.0" prefHeight="33.0" prefWidth="270.0" text="Pay Key Money Balance">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="169.0" layoutY="40.0" prefHeight="39.0" prefWidth="277.0" text="Remain Key Money" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

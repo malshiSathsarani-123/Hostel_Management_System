@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="976.0" style="-fx-background-color: #b388ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.ReservationDetailsFormController">
+   <children>
+      <TableView fx:id="tblResevedRoom" layoutX="40.0" layoutY="102.0" prefHeight="213.0" prefWidth="345.0" stylesheets="@../style/style.css">
+        <columns>
+          <TableColumn fx:id="clmRoomTypeIdReseved" prefWidth="110.0" text="Room Type Id" />
+          <TableColumn fx:id="clmRoomIdReseved" prefWidth="111.0" text="Room Id" />
+            <TableColumn fx:id="clmTypeReseved" prefWidth="123.0" text="Type" />
+        </columns>
+         <styleClass>
+            <String fx:value="column-header-background" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+      <TableView fx:id="tblAvailableRoom" layoutX="40.0" layoutY="366.0" prefHeight="193.0" prefWidth="345.0" stylesheets="@../style/style.css">
+         <columns>
+            <TableColumn fx:id="clmRoomTypeId" prefWidth="110.0" text="Room Type Id" />
+            <TableColumn fx:id="clmRoomId" prefWidth="111.0" text="Room Id" />
+            <TableColumn fx:id="clmType" prefWidth="123.0" text="Type" />
+         </columns>
+         <styleClass>
+            <String fx:value="column-header-background" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
+      </TableView>
+      <AnchorPane layoutX="457.0" layoutY="94.0" prefHeight="473.0" prefWidth="460.0" style="-fx-background-color: white;" styleClass="edge-button" stylesheets="@../style/style.css">
+         <children>
+            <TextField fx:id="txtId" layoutX="174.0" layoutY="94.0" prefHeight="25.0" prefWidth="223.0" styleClass="text" stylesheets="@../style/style.css" />
+            <TextField fx:id="txtGender" layoutX="174.0" layoutY="246.0" prefHeight="25.0" prefWidth="223.0" styleClass="text" />
+            <TextField fx:id="txtName" layoutX="174.0" layoutY="143.0" prefHeight="25.0" prefWidth="223.0" styleClass="text" />
+            <Label layoutX="29.0" layoutY="36.0" prefHeight="36.0" prefWidth="270.0" text="Student Details">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateStart" layoutX="174.0" layoutY="341.0" prefHeight="25.0" prefWidth="223.0" stylesheets="@../style/style.css" />
+            <TextField fx:id="txtAddress" layoutX="174.0" layoutY="194.0" prefHeight="25.0" prefWidth="223.0" styleClass="text" />
+            <Label layoutX="29.0" layoutY="94.0" prefHeight="25.0" prefWidth="114.0" text="Student Id">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="143.0" prefHeight="25.0" prefWidth="114.0" text="Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="194.0" prefHeight="25.0" prefWidth="114.0" text="Address">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="246.0" prefHeight="25.0" prefWidth="114.0" text="Gender">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="295.0" prefHeight="25.0" prefWidth="114.0" text="Contact">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="341.0" prefHeight="25.0" prefWidth="114.0" text="Start Date">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtContact" layoutX="174.0" layoutY="295.0" prefHeight="25.0" prefWidth="223.0" styleClass="text" />
+            <DatePicker fx:id="dateEnd" layoutX="174.0" layoutY="390.0" prefHeight="25.0" prefWidth="223.0" stylesheets="@../style/style.css" />
+            <Label layoutX="29.0" layoutY="390.0" prefHeight="25.0" prefWidth="114.0" text="End Date">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="40.0" layoutY="66.0" prefHeight="36.0" prefWidth="270.0" text="Reseved Room">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="330.0" prefHeight="36.0" prefWidth="270.0" text="Availabel Room">
+         <font>
+            <Font name="System Bold Italic" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="27.0" prefHeight="39.0" prefWidth="277.0" text="Reservation Details" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

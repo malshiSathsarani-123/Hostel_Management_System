@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="636.0" prefWidth="1206.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.DashboardFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#021426" height="622.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="242.0" />
+      <AnchorPane fx:id="loadContext" layoutX="238.0" layoutY="37.0" prefHeight="600.0" prefWidth="976.0" style="-fx-background-color: #b388ff;">
+         <children>
+            <AnchorPane layoutX="47.0" layoutY="49.0" opacity="0.8" prefHeight="157.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="edge-button" stylesheets="@../style/style.css">
+               <children>
+                  <Label layoutX="34.0" layoutY="112.0" prefHeight="29.0" prefWidth="132.0" text="Key Money- Rs.3100.00">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNonAcCount" layoutX="90.0" layoutY="69.0" prefHeight="29.0" prefWidth="20.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="46.0" layoutY="40.0" prefHeight="29.0" prefWidth="109.0" text="NON-AC ROOM ">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="278.0" layoutY="49.0" opacity="0.8" prefHeight="157.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="edge-button" stylesheets="@../style/style.css">
+               <children>
+                  <Label layoutX="34.0" layoutY="112.0" prefHeight="29.0" prefWidth="132.0" text="Key Money- Rs.6500.00">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNonAcFoodCount" layoutX="90.0" layoutY="69.0" prefHeight="29.0" prefWidth="20.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="40.0" prefHeight="29.0" prefWidth="144.0" text="NON-AC ROOM / FOOD ">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="516.0" layoutY="49.0" opacity="0.8" prefHeight="157.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="edge-button" stylesheets="@../style/style.css">
+               <children>
+                  <Label layoutX="34.0" layoutY="112.0" prefHeight="29.0" prefWidth="132.0" text="Key Money- Rs.8900.00">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblAcCount" layoutX="90.0" layoutY="69.0" prefHeight="29.0" prefWidth="20.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="69.0" layoutY="40.0" prefHeight="29.0" prefWidth="77.0" text="AC ROOM ">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="753.0" layoutY="49.0" opacity="0.8" prefHeight="157.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="edge-button" stylesheets="@../style/style.css">
+               <children>
+                  <Label layoutX="34.0" layoutY="112.0" prefHeight="29.0" prefWidth="144.0" text="Key Money- Rs.16000.00">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblAcFoodCount" layoutX="90.0" layoutY="69.0" prefHeight="29.0" prefWidth="20.0" text="0">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="58.0" layoutY="50.0" prefHeight="29.0" prefWidth="109.0" text="AC ROOM / FOOD">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#021426" height="37.0" stroke="BLACK" strokeType="INSIDE" width="1214.0" />
+      <Separator layoutX="5.0" layoutY="151.0" opacity="0.38" prefHeight="2.0" prefWidth="233.0" />
+      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="235.0" onAction="#btnStudentOnAction" prefHeight="37.0" prefWidth="208.0" stylesheets="@../style/style.css" text="STUDENT" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/students.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <styleClass>
+            <String fx:value="edge-button" />
+            <String fx:value="button" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="299.0" onAction="#btnRoomOnAction" prefHeight="37.0" prefWidth="208.0" styleClass="edge-button" stylesheets="@../style/style.css" text="ROOM" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/hotel.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="368.0" onAction="#btnReservationOnAction" prefHeight="37.0" prefWidth="208.0" styleClass="edge-button" stylesheets="@../style/style.css" text="RESERVATION" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/booking.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="TOP_LEFT" layoutY="440.0" onAction="#btnReservationDetailsOnAction" prefHeight="37.0" prefWidth="208.0" styleClass="edge-button" stylesheets="@../style/style.css" text="RESERVATION DETAILS" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/biography.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton alignment="TOP_LEFT" layoutY="504.0" onAction="#btnKeyMoneyOnAction" prefHeight="37.0" prefWidth="208.0" styleClass="edge-button" stylesheets="@../style/style.css" text="KEY MONEY" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/billing.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblTime" layoutX="1098.0" layoutY="4.0" prefHeight="29.0" prefWidth="109.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="984.0" layoutY="4.0" prefHeight="29.0" prefWidth="132.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="44.0" layoutY="51.0" prefHeight="48.0" prefWidth="121.0" text="D24 Hostel" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="75.0" prefHeight="48.0" prefWidth="132.0" text="Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

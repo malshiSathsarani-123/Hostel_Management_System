@@ -1,0 +1,12 @@
+.edge-button{
+    -fx-border-radius-color:#0652DD;
+    -fx-background-radius: 90px 0px 0px 90px;
+}
+.edge-button2{
+    -fx-border-radius-color:#0652DD;
+    -fx-background-radius: 600px 0px 500px 0px;
+}
+.text-field{
+    -fx-text-fill: rgb(2, 2, 2);
+    -fx-font: #19232c;
+}
