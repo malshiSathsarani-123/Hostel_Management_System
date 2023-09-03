@@ -6,7 +6,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,18 +16,26 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @Entity
+@NoArgsConstructor
 public class Student {
     @Id
     private String StudentId;
     private String name;
     private String address;
     private String contact;
-    private Date date;
+    private LocalDate date;
     private String gender;
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Reservation> resList = new ArrayList<>();
-    public Student() {
 
+
+    public Student(String studentId, String name, String address, String contact, LocalDate date, String gender) {
+        StudentId = studentId;
+        this.name = name;
+        this.address = address;
+        this.contact = contact;
+        this.date = date;
+        this.gender = gender;
     }
 }

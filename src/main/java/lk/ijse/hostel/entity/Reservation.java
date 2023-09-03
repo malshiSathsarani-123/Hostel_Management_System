@@ -1,12 +1,10 @@
 package lk.ijse.hostel.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -14,18 +12,22 @@ import java.util.Date;
 public class Reservation {
     @Id
     private String reservationId;
-    private Date date;
-    private String studentId;
+    private LocalDate StartDate;
+    private LocalDate endDate;
     private String roomTypeId;
-    private String roomId;
-    private String status;
 
     public Reservation() {
 
     }
     @ManyToOne
+    @JoinColumn(name = "RoomId")
     private Room room;
 
     @ManyToOne
+    @JoinColumn(name = "StudentId")
     private Student student;
+
+    public Reservation(String reservationId) {
+        this.reservationId = reservationId;
+    }
 }

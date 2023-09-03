@@ -3,15 +3,17 @@ package lk.ijse.hostel.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 public class ReservationDto {
     private String reservationId;
-    private Date date;
-    private String studentId;
+    private LocalDate StartDate;
+    private LocalDate endDate;
     private String roomTypeId;
-    private String roomId;
-    private String status;
+
+    private RoomDto roomDto;
+    private StudentDto studentDto;
+
 }

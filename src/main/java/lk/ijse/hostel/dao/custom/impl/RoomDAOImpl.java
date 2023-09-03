@@ -51,11 +51,13 @@ public class RoomDAOImpl implements RoomDAO {
         Query query = session.createQuery("from Room where roomId=?1");
         query.setParameter(1,id);
         Room room = (Room) query.uniqueResult();
-        System.out.println(room);
         transaction.commit();
         session.close();
-
-        return room;
+        if (room != null){
+            return room;
+        }else {
+                return null;
+        }
     }
 
     @Override

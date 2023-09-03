@@ -127,7 +127,7 @@ public class ManageRoomFormController implements Initializable {
         Double keyMoney = Double.valueOf(txtKeyMoney.getText());
         Integer qty = Integer.valueOf(txtQty.getText());
 
-        boolean isSave = roomBO.save(new RoomDto(typeId,id,type,keyMoney,qty));
+        boolean isSave = roomBO.save(new RoomDto(typeId,id,type,keyMoney,qty,"available"));
         if(isSave){
             clear();
             new Alert(Alert.AlertType.CONFIRMATION,"SAVED ROOM!!!").show();
@@ -186,11 +186,16 @@ public class ManageRoomFormController implements Initializable {
     @FXML
     public void btnSearchOnAction(ActionEvent event) {
         RoomDto roomDto = roomBO.search(txtId.getText());
-        cmbTypeId.setValue(roomDto.getRoomTypeId());
-        txtId.setText(roomDto.getRoomId());
-        txtType.setText(roomDto.getType());
-        txtKeyMoney.setText(String.valueOf(roomDto.getKeyMoney()));
-        txtQty.setText(String.valueOf(roomDto.getQty()));
+        if (roomDto!=null){
+            cmbTypeId.setValue(roomDto.getRoomTypeId());
+            txtId.setText(roomDto.getRoomId());
+            txtType.setText(roomDto.getType());
+            txtKeyMoney.setText(String.valueOf(roomDto.getKeyMoney()));
+            txtQty.setText(String.valueOf(roomDto.getQty()));
+        }
+        if (roomDto == null){
+            new Alert(Alert.AlertType.ERROR,"Room Not Found.....").show();
+        }
     }
 
     @FXML

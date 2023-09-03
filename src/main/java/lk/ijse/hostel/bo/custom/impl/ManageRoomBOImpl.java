@@ -13,7 +13,7 @@ public class ManageRoomBOImpl implements ManageRoomBO {
     RoomDAO roomDAO = new RoomDAOImpl();
     @Override
     public boolean save(RoomDto roomDto) {
-        return roomDAO.save(new Room(roomDto.getRoomTypeId(),roomDto.getRoomId(),roomDto.getType(),roomDto.getKeyMoney(),roomDto.getQty()));
+        return roomDAO.save(new Room(roomDto.getRoomTypeId(),roomDto.getRoomId(),roomDto.getType(),roomDto.getKeyMoney(),roomDto.getQty(),roomDto.getStatus()));
     }
 
     @Override
@@ -29,7 +29,7 @@ public class ManageRoomBOImpl implements ManageRoomBO {
     @Override
     public RoomDto search(String id) {
         Room room = roomDAO.search(id);
-        return new RoomDto(room.getRoomTypeId(),room.getRoomId(),room.getType(),room.getKeyMoney(),room.getQty());
+        return new RoomDto(room.getRoomTypeId(),room.getRoomId(),room.getType(),room.getKeyMoney(),room.getQty(),room.getStatus());
     }
 
     @Override
@@ -37,7 +37,7 @@ public class ManageRoomBOImpl implements ManageRoomBO {
         List<RoomDto>roomDtoList = new ArrayList<>();
         List<Room>roomList = roomDAO.getAll();
         for (Room room : roomList){
-            roomDtoList.add(new RoomDto(room.getRoomTypeId(),room.getRoomId(),room.getType(),room.getKeyMoney(),room.getQty()));
+            roomDtoList.add(new RoomDto(room.getRoomTypeId(),room.getRoomId(),room.getType(),room.getKeyMoney(),room.getQty(),room.getStatus()));
         }
         return roomDtoList;
     }

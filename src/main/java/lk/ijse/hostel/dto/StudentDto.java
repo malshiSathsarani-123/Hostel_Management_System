@@ -3,6 +3,7 @@ package lk.ijse.hostel.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -12,6 +13,7 @@ public class StudentDto {
     private String name;
     private String address;
     private String contact;
-    private Date date;
+    private LocalDate date;
     private String gender;
+
 }
