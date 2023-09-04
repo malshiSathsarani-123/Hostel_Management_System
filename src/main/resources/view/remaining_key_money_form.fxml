@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -38,10 +37,9 @@
             <JFXComboBox fx:id="cmbStudentId" layoutX="31.0" layoutY="92.0" onAction="#cmbStudentIdOnAction" prefHeight="25.0" prefWidth="149.0" promptText="Student Id" />
             <TextField fx:id="txtRoomId" layoutX="31.0" layoutY="144.0" promptText="Room Id" styleClass="text" />
             <TextField fx:id="txtType" layoutX="239.0" layoutY="144.0" promptText="Type" styleClass="text" />
-            <TextField fx:id="txtPayAmoub" layoutX="239.0" layoutY="259.0" promptText="Pay Amount" styleClass="text" />
-            <DatePicker fx:id="datePicker" layoutX="31.0" layoutY="202.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" styleClass="text" />
-            <TextField fx:id="txtBalance" layoutX="31.0" layoutY="259.0" promptText="Balance" styleClass="text" />
-            <TextField fx:id="txtKeyMoney" layoutX="239.0" layoutY="196.0" prefHeight="25.0" prefWidth="149.0" promptText="Key Money" styleClass="text" />
+            <TextField fx:id="txtPayAmoub" layoutX="31.0" layoutY="268.0" promptText="Pay Amount" styleClass="text" />
+            <TextField fx:id="txtBalance" layoutX="239.0" layoutY="201.0" promptText="Balance" styleClass="text" />
+            <TextField fx:id="txtKeyMoney" layoutX="31.0" layoutY="201.0" prefHeight="25.0" prefWidth="149.0" promptText="Key Money" styleClass="text" />
             <Button layoutX="299.0" layoutY="340.0" mnemonicParsing="false" onAction="#btnPayOnAction" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #021426;" text="Pay" textFill="WHITE">
                <font>
                   <Font name="System Bold Italic" size="12.0" />

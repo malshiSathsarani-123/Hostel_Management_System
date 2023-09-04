@@ -13,10 +13,12 @@ public class PaymentDetails {
     @Id
     private String paymentDetailsId;
     private Double KeyMoney;
-    private Double payAmount;
     private Double balance;
+    private Double payAmount;
+
 
     @OneToOne
     @JoinColumn(name = "reservationId")
     private Reservation reservation;
+
 }

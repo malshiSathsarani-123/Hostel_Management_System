@@ -142,13 +142,11 @@ public class ReserveRoomsFormController implements Initializable {
         StudentDto studentDto = new StudentDto(id,name,address,contact,date,gender);
         ReservationDto reservationDto = new ReservationDto(reservationId,startDate,end,roomTypeId,roomDto,studentDto);
 
-        String paymentId = reservationRoomsBO.getNextPaymentId();
-        System.out.println(paymentId);
         Double keyMoney = Double.valueOf(txtKeyMoney.getText());
         Double payAmount = Double.valueOf(txtPayAmount.getText());
         Double balance = Double.valueOf(txtBalance.getText());
 
-        PaymentDetailsDto paymentDetailsDto = new PaymentDetailsDto(paymentId,keyMoney,payAmount,balance,reservationDto);
+        PaymentDetailsDto paymentDetailsDto = new PaymentDetailsDto(id,keyMoney,payAmount,balance,reservationDto);
 
         boolean isReserved = reservationRoomsBO.reservedRoomWithPayment(studentDto,reservationDto, paymentDetailsDto);
         if (isReserved){

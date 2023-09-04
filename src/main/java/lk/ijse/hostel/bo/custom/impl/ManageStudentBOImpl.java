@@ -1,4 +1,10 @@
 package lk.ijse.hostel.bo.custom.impl;
 
-public class ManageStudentBOImpl {
+import lk.ijse.hostel.bo.custom.ManageStudentBO;
+
+public class ManageStudentBOImpl implements ManageStudentBO {
+    @Override
+    public String getName() {
+        return null;
+    }
 }

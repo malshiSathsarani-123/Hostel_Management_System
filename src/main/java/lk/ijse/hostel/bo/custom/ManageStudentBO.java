@@ -1,4 +1,5 @@
 package lk.ijse.hostel.bo.custom;
 
-public interface ManageStudentBO {
+public interface ManageStudentBO  {
+    String getName();
 }

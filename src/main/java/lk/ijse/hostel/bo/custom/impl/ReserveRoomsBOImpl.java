@@ -95,5 +95,4 @@ public class ReserveRoomsBOImpl implements ReservationRoomsBO {
         return paymentDAO.getNextId();
     }
 
-
 }

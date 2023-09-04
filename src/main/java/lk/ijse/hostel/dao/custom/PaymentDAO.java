@@ -6,4 +6,6 @@ public interface PaymentDAO {
     String getNextId();
 
     boolean savePayment(PaymentDetails paymentDetails);
+
+    boolean updatePaymet(PaymentDetails paymentDetails);
 }
