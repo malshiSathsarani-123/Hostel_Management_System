@@ -12,4 +12,6 @@ public interface StudentDAO {
     List<String> getIds();
 
     String getReservationId(String id);
+
+    boolean delete(Student student);
 }

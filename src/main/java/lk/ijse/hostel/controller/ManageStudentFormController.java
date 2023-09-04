@@ -3,11 +3,12 @@ package lk.ijse.hostel.controller;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.hostel.bo.custom.ManageStudentBO;
+import lk.ijse.hostel.bo.custom.impl.ManageStudentBOImpl;
+import lk.ijse.hostel.dto.RoomDto;
+import lk.ijse.hostel.dto.StudentDto;
 
 public class ManageStudentFormController {
 
@@ -53,14 +54,31 @@ public class ManageStudentFormController {
     @FXML
     private TextField txtName;
 
+    ManageStudentBO studentBO = new ManageStudentBOImpl();
     @FXML
     void btnClearOnAction(ActionEvent event) {
 
     }
+    public void clear(){
+        cmbGender.setPromptText("Gender");
+        txtId.setText("");
+        txtAddress.setText("");
+        txtContact.setText("");
+        txtName.setText("");
+    }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        String id = txtId.getText();
 
+        boolean isDelete = studentBO.delete(new StudentDto(id));
+        if (isDelete){
+            clear();
+            new Alert(Alert.AlertType.CONFIRMATION,"DELETED STUDENT!!!").show();
+        }else {
+            clear();
+            new Alert(Alert.AlertType.WARNING,"DELETED NOT STUDENT!!!").show();
+        }
     }
 
     @FXML

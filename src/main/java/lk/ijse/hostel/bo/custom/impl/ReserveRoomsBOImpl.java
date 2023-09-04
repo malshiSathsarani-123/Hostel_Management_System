@@ -3,9 +3,11 @@ package lk.ijse.hostel.bo.custom.impl;
 import lk.ijse.hostel.bo.custom.ReservationRoomsBO;
 import lk.ijse.hostel.dao.custom.PaymentDAO;
 import lk.ijse.hostel.dao.custom.ReservationDAO;
+import lk.ijse.hostel.dao.custom.RoomDAO;
 import lk.ijse.hostel.dao.custom.StudentDAO;
 import lk.ijse.hostel.dao.custom.impl.PaymentDAOImpl;
 import lk.ijse.hostel.dao.custom.impl.ReservationDAOImpl;
+import lk.ijse.hostel.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.hostel.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.hostel.dto.PaymentDetailsDto;
 import lk.ijse.hostel.dto.ReservationDto;
@@ -22,7 +24,7 @@ public class ReserveRoomsBOImpl implements ReservationRoomsBO {
     ReservationDAO reservationDAO = new ReservationDAOImpl();
     StudentDAO studentDAO = new StudentDAOImpl();
     PaymentDAO paymentDAO = new PaymentDAOImpl();
-
+    RoomDAO roomDAO = new RoomDAOImpl();
     @Override
     public List<String> getRoomId(String selectedItem) {
         return reservationDAO.getRoomId(selectedItem);
@@ -78,7 +80,10 @@ public class ReserveRoomsBOImpl implements ReservationRoomsBO {
             if (isSReservedRoom){
                 boolean isPayed = paymentDAO.savePayment(new PaymentDetails(paymentDetailsDto.getPaymentDetailsId(), paymentDetailsDto.getKeyMoney(), paymentDetailsDto.getPayAmount(), paymentDetailsDto.getBalance(),reservation));
                 if (isPayed){
-                    return true;
+                    boolean isUpdateRoomStatus = roomDAO.updateStatus(room);
+                    if (isUpdateRoomStatus){
+                        return true;
+                    }
                 }
             }
         }

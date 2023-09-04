@@ -25,4 +25,8 @@ public class RoomDto {
         this.qty = qty;
     }
 
+    public RoomDto(String roomId, String reserved) {
+        this.roomId=roomId;
+        this.status=reserved;
+    }
 }

@@ -14,4 +14,10 @@ public interface RoomDAO {
     Room search(String id);
 
     List<Room> getAll();
+
+    boolean updateStatus(Room room);
+
+    List<Room> getAllAvailable();
+
+    List<Room> getAllReserved();
 }

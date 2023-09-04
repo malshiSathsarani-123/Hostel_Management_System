@@ -16,4 +16,7 @@ public class StudentDto {
     private LocalDate date;
     private String gender;
 
+    public StudentDto(String id) {
+        this.StudentId= id;
+    }
 }

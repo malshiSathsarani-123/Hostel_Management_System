@@ -71,4 +71,46 @@ public class RoomDAOImpl implements RoomDAO {
 
         return roomList;
     }
+
+    @Override
+    public boolean updateStatus(Room room) {
+        Session session= FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction();
+        Query query = session.createQuery(" update Room set status=?1 where roomId=?2");
+        query.setParameter(1,"reserved");
+        query.setParameter(2,room.getRoomId());
+        int executeUpdate = query.executeUpdate();
+        transaction.commit();
+        session.close();
+        if (executeUpdate>0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    @Override
+    public List<Room> getAllAvailable() {
+        Session session= FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction();
+        Query query = session.createQuery("from Room where status =?1");
+        query.setParameter(1,"available");
+        List <Room> roomList = query.list();
+        transaction.commit();
+        session.close();
+
+        return roomList;
+    }
+    @Override
+    public List<Room> getAllReserved() {
+        Session session= FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction();
+        Query query = session.createQuery("from Room where status =?1");
+        query.setParameter(1,"reserved");
+        List <Room> roomList = query.list();
+        transaction.commit();
+        session.close();
+
+        return roomList;
+    }
 }

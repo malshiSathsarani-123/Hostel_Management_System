@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -26,7 +25,7 @@ public class Student {
     private LocalDate date;
     private String gender;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Reservation> resList = new ArrayList<>();
 
 
@@ -37,5 +36,9 @@ public class Student {
         this.contact = contact;
         this.date = date;
         this.gender = gender;
+    }
+
+    public Student(String studentId) {
+        this.StudentId = studentId;
     }
 }
