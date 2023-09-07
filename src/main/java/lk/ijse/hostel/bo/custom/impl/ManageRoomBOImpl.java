@@ -1,6 +1,8 @@
 package lk.ijse.hostel.bo.custom.impl;
 
+import lk.ijse.hostel.bo.BOFactory;
 import lk.ijse.hostel.bo.custom.ManageRoomBO;
+import lk.ijse.hostel.dao.DAOFactory;
 import lk.ijse.hostel.dao.custom.RoomDAO;
 import lk.ijse.hostel.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.hostel.dto.RoomDto;
@@ -10,7 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ManageRoomBOImpl implements ManageRoomBO {
-    RoomDAO roomDAO = new RoomDAOImpl();
+//    RoomDAO roomDAO = new RoomDAOImpl();
+    RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ROOM);
+
     @Override
     public boolean save(RoomDto roomDto) {
         return roomDAO.save(new Room(roomDto.getRoomTypeId(),roomDto.getRoomId(),roomDto.getType(),roomDto.getKeyMoney(),roomDto.getQty(),roomDto.getStatus()));

@@ -1,23 +1,21 @@
 package lk.ijse.hostel.bo.custom.impl;
 
 import lk.ijse.hostel.bo.custom.ReservationDetailsBO;
+import lk.ijse.hostel.dao.DAOFactory;
 import lk.ijse.hostel.dao.custom.ReservationDAO;
 import lk.ijse.hostel.dao.custom.RoomDAO;
-import lk.ijse.hostel.dao.custom.impl.ReservationDAOImpl;
-import lk.ijse.hostel.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.hostel.dto.ReservationDto;
 import lk.ijse.hostel.dto.RoomDto;
 import lk.ijse.hostel.dto.StudentDto;
 import lk.ijse.hostel.entity.Reservation;
 import lk.ijse.hostel.entity.Room;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReservationDetailsBOImpl implements ReservationDetailsBO {
-    RoomDAO roomDAO = new RoomDAOImpl();
-    ReservationDAO reservationDAO = new ReservationDAOImpl();
+    RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ROOM);
+    ReservationDAO reservationDAO = (ReservationDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.RESERVATION);
     @Override
     public List<RoomDto> getAll() {
         List<RoomDto>roomDtoList = new ArrayList<>();

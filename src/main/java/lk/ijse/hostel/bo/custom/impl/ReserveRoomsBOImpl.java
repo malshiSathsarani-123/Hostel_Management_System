@@ -1,6 +1,7 @@
 package lk.ijse.hostel.bo.custom.impl;
 
 import lk.ijse.hostel.bo.custom.ReservationRoomsBO;
+import lk.ijse.hostel.dao.DAOFactory;
 import lk.ijse.hostel.dao.custom.PaymentDAO;
 import lk.ijse.hostel.dao.custom.ReservationDAO;
 import lk.ijse.hostel.dao.custom.RoomDAO;
@@ -21,10 +22,10 @@ import java.util.List;
 
 public class ReserveRoomsBOImpl implements ReservationRoomsBO {
 
-    ReservationDAO reservationDAO = new ReservationDAOImpl();
-    StudentDAO studentDAO = new StudentDAOImpl();
-    PaymentDAO paymentDAO = new PaymentDAOImpl();
-    RoomDAO roomDAO = new RoomDAOImpl();
+    ReservationDAO reservationDAO = (ReservationDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.RESERVATION);
+    StudentDAO studentDAO = (StudentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
+    PaymentDAO paymentDAO = (PaymentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PAYMENT);
+    RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ROOM);
     @Override
     public List<String> getRoomId(String selectedItem) {
         return reservationDAO.getRoomId(selectedItem);

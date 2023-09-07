@@ -1,6 +1,7 @@
 package lk.ijse.hostel.bo.custom.impl;
 
 import lk.ijse.hostel.bo.custom.RemainingKeyMoneyBO;
+import lk.ijse.hostel.dao.DAOFactory;
 import lk.ijse.hostel.dao.custom.PaymentDAO;
 import lk.ijse.hostel.dao.custom.QueryDAO;
 import lk.ijse.hostel.dao.custom.StudentDAO;
@@ -13,9 +14,10 @@ import java.util.List;
 
 public class RemainingKeyMoneyBOImpl implements RemainingKeyMoneyBO {
 
-    QueryDAO queryDAO = new QueryDAOImpl();
-    StudentDAO studentDAO = new StudentDAOImpl();
-    PaymentDAO paymentDAO = new PaymentDAOImpl();
+    QueryDAO queryDAO = (QueryDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.QUERY);
+    StudentDAO studentDAO = (StudentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
+    PaymentDAO paymentDAO = (PaymentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.PAYMENT);
+
 
     @Override
     public List<Object[]> getAll() {

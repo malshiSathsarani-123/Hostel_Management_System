@@ -1,6 +1,8 @@
 package lk.ijse.hostel.bo.custom.impl;
 
 import lk.ijse.hostel.bo.custom.ManageStudentBO;
+import lk.ijse.hostel.dao.DAOFactory;
+import lk.ijse.hostel.dao.custom.RoomDAO;
 import lk.ijse.hostel.dao.custom.StudentDAO;
 import lk.ijse.hostel.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.hostel.dto.StudentDto;
@@ -11,7 +13,8 @@ import java.util.List;
 
 public class ManageStudentBOImpl implements ManageStudentBO {
 
-    StudentDAO studentDAO = new StudentDAOImpl();
+//    StudentDAO studentDAO = new StudentDAOImpl();
+    StudentDAO studentDAO = (StudentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
     @Override
     public boolean delete(StudentDto studentDto) {
         return studentDAO.delete(new Student(studentDto.getStudentId()));

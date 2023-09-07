@@ -1,10 +1,11 @@
 package lk.ijse.hostel.dao.custom;
 
+import lk.ijse.hostel.dao.SuperDAO;
 import lk.ijse.hostel.entity.Room;
 
 import java.util.List;
 
-public interface RoomDAO {
+public interface RoomDAO extends SuperDAO {
     boolean save(Room room);
 
     boolean update(Room room);
