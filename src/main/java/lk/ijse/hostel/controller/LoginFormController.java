@@ -45,13 +45,18 @@ public class LoginFormController implements Initializable {
     }
 
     @FXML
-    void btnSignOnAction(ActionEvent event) {
-
+    void btnSignOnAction(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/sign_form.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
     @FXML
     void txtUserNameOnAction(ActionEvent event) {
-
+        
     }
 
     @FXML
@@ -65,6 +70,7 @@ public class LoginFormController implements Initializable {
         Stage stage = (Stage) root.getScene().getWindow();
         stage.setScene(scene);
         stage.centerOnScreen();
+
         stage.close();
     }
 }

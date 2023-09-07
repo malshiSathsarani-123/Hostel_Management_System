@@ -57,7 +57,7 @@ public class ReserveRoomsFormController implements Initializable {
     private TextField txtContact;
 
     @FXML
-    private TextField txtId;
+    private JFXComboBox<String> cmbStudentId;
 
     @FXML
     private TextField txtKeyMoney;
@@ -78,6 +78,17 @@ public class ReserveRoomsFormController implements Initializable {
         loadRoomTypeId();
         loadGender();
         generateNextId();
+        loadStudentId();
+    }
+
+    private void loadStudentId() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        List<String> id = reservationRoomsBO.getStudentId();
+
+        for (String ids : id){
+            obList.add(ids);
+        }
+        cmbStudentId.setItems(obList);
     }
 
     private void generateNextId() {
@@ -123,8 +134,22 @@ public class ReserveRoomsFormController implements Initializable {
     }
 
     @FXML
+    public void cmbStudentIdOnAction(ActionEvent actionEvent) {
+        StudentDto studentDto = reservationRoomsBO.getStudentData(cmbStudentId.getSelectionModel().getSelectedItem());
+        if (studentDto != null){
+            txtName.setText(studentDto.getName());
+            txtAddress.setText(studentDto.getAddress());
+            txtContact.setText(studentDto.getContact());
+            cmbDob.setValue(studentDto.getDate());
+            cmbGender.setValue(studentDto.getGender());
+        }if (studentDto == null){
+            new Alert(Alert.AlertType.ERROR,"Student Not Found.....").show();
+        }
+    }
+
+    @FXML
     void btnReserveOnAction(ActionEvent event) throws SQLException {
-        String id = txtId.getText();
+        String id = cmbStudentId.getSelectionModel().getSelectedItem();
         String name = txtName.getText();
         String contact = txtContact.getText();
         String address = txtAddress.getText();
@@ -139,7 +164,7 @@ public class ReserveRoomsFormController implements Initializable {
 
         RoomDto roomDto = new RoomDto(roomId);
 
-        StudentDto studentDto = new StudentDto(id,name,address,contact,date,gender);
+        StudentDto studentDto = new StudentDto(id,name,address,contact,date,gender,"reserved");
         ReservationDto reservationDto = new ReservationDto(reservationId,startDate,end,roomTypeId,roomDto,studentDto);
 
         Double keyMoney = Double.valueOf(txtKeyMoney.getText());
@@ -206,11 +231,6 @@ public class ReserveRoomsFormController implements Initializable {
     @FXML
     void txtContactOnAction(ActionEvent event) {
         txtAddress.requestFocus();
-    }
-
-    @FXML
-    void txtIdOnAction(ActionEvent event) {
-        txtName.requestFocus();
     }
 
     @FXML

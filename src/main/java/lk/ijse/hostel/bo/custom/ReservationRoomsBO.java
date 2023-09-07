@@ -4,7 +4,6 @@ import lk.ijse.hostel.dto.PaymentDetailsDto;
 import lk.ijse.hostel.dto.ReservationDto;
 import lk.ijse.hostel.dto.StudentDto;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface ReservationRoomsBO {
@@ -15,4 +14,8 @@ public interface ReservationRoomsBO {
     String getNextPaymentId();
 
     boolean reservedRoomWithPayment(StudentDto studentDto, ReservationDto reservationDto, PaymentDetailsDto paymentDetailsDto);
+
+    List<String> getStudentId();
+
+    StudentDto getStudentData(String id);
 }

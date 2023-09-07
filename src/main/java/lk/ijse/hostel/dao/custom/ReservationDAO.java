@@ -11,4 +11,5 @@ public interface ReservationDAO {
 
     String getNextId();
 
+    Reservation search(String id);
 }

@@ -9,10 +9,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import lk.ijse.hostel.bo.custom.ReservationDetailsBO;
 import lk.ijse.hostel.bo.custom.impl.ReservationDetailsBOImpl;
+import lk.ijse.hostel.dto.ReservationDto;
 import lk.ijse.hostel.dto.RoomDto;
 import lk.ijse.hostel.tm.ManageRoomTM;
+import lk.ijse.hostel.tm.RemainKeyMoneyTM;
 
 import java.net.URL;
 import java.util.List;
@@ -116,5 +119,25 @@ public class ReservationDetailsFormController implements Initializable {
         clmRoomIdReseved.setCellValueFactory(new PropertyValueFactory<>("roomId"));
         clmTypeReseved.setCellValueFactory(new PropertyValueFactory<>("type"));
         clmRoomTypeIdReseved.setCellValueFactory(new PropertyValueFactory<>("qty"));
+    }
+
+    public void getStudentDetails(MouseEvent mouseEvent) {
+        if (tblResevedRoom.getSelectionModel().getSelectedItem() != null) {
+            ManageRoomTM selectedItem = tblResevedRoom.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+               String id = selectedItem.getRoomId();
+               ReservationDto reservationDto = detailsBO.searchStudent(id);
+               if (reservationDto != null){
+                   txtId.setText(reservationDto.getStudentDto().getStudentId());
+                   txtName.setText(reservationDto.getStudentDto().getName());
+                   txtAddress.setText(reservationDto.getStudentDto().getAddress());
+                   txtContact.setText(reservationDto.getStudentDto().getContact());
+                   txtGender.setText(reservationDto.getStudentDto().getGender());
+                   dateStart.setValue(reservationDto.getStartDate());
+                   dateEnd.setValue(reservationDto.getEndDate());
+               }
+
+            }
+        }
     }
 }

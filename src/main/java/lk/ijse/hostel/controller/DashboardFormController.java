@@ -127,4 +127,21 @@ public class DashboardFormController implements Initializable {
         stage.centerOnScreen();
         stage.close();
     }
+
+    public void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/login_form.fxml"));
+        AnchorPane anchorPane = loader.load();
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("DASH BORD");
+        stage.centerOnScreen();
+    }
+
+    public void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
+        Stage window = (Stage) root.getScene().getWindow();
+        window.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/dashbord_form.fxml"))));
+        window.centerOnScreen();
+        window.show();
+    }
 }

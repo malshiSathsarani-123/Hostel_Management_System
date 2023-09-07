@@ -34,14 +34,17 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public boolean delete(Room room) {
-        Session session= FactoryConfiguration.getInstance().getSession();
-        Transaction transaction=session.beginTransaction();
-        session.remove(room);
+    public boolean delete(Room room){
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        int executeUpdate = session.createNativeQuery("delete from Room where roomId='" + room.getRoomId() + "'", Room.class).executeUpdate();
         transaction.commit();
         session.close();
-
-        return true;
+        if (executeUpdate>0){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override

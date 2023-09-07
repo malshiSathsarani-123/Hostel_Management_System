@@ -14,4 +14,12 @@ public interface StudentDAO {
     String getReservationId(String id);
 
     boolean delete(Student student);
+
+    List<Student> getAll();
+
+    Student getStudentData(String id);
+
+    boolean update(Student student);
+
+    boolean updateStatus(Student student);
 }

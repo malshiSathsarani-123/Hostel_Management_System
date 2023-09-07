@@ -24,18 +24,20 @@ public class Student {
     private String contact;
     private LocalDate date;
     private String gender;
+    private String status;
 
-    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(targetEntity = Reservation.class, mappedBy = "student",cascade = CascadeType.ALL)
     private List<Reservation> resList = new ArrayList<>();
 
 
-    public Student(String studentId, String name, String address, String contact, LocalDate date, String gender) {
+    public Student(String studentId, String name, String address, String contact, LocalDate date, String gender,String status) {
         StudentId = studentId;
         this.name = name;
         this.address = address;
         this.contact = contact;
         this.date = date;
         this.gender = gender;
+        this.status = status;
     }
 
     public Student(String studentId) {

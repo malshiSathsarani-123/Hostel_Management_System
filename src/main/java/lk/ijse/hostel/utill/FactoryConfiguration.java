@@ -1,9 +1,6 @@
 package lk.ijse.hostel.utill;
 
-import lk.ijse.hostel.entity.PaymentDetails;
-import lk.ijse.hostel.entity.Reservation;
-import lk.ijse.hostel.entity.Room;
-import lk.ijse.hostel.entity.Student;
+import lk.ijse.hostel.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -18,7 +15,8 @@ public class FactoryConfiguration {
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(Reservation.class)
                 .addAnnotatedClass(PaymentDetails.class)
-                .addAnnotatedClass(Room.class);
+                .addAnnotatedClass(Room.class)
+                .addAnnotatedClass(User.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 

@@ -130,9 +130,17 @@ public class RemainingKeyMoneyFormController implements Initializable {
         Reservation reservation = new Reservation(resId);
 
         boolean isUpdate = remainingKeyMoneyBO.updatePayment(new PaymentDetails(id,keyMoney,balance1,payAmount1,reservation));
+        getAll();
+        clear();
         if (isUpdate){
             new Alert(Alert.AlertType.CONFIRMATION).show();
         }
+    }
+    public void clear(){
+        txtRoomId.setText("");
+        txtType.setText("");
+        txtKeyMoney.setText("");
+        txtBalance.setText("");
     }
 
     @FXML

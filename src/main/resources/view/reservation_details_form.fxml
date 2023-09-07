@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="976.0" style="-fx-background-color: #b388ff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostel.controller.ReservationDetailsFormController">
    <children>
-      <TableView fx:id="tblResevedRoom" layoutX="40.0" layoutY="102.0" prefHeight="213.0" prefWidth="345.0" stylesheets="@../style/style.css">
+      <TableView fx:id="tblResevedRoom" layoutX="40.0" layoutY="102.0" onMousePressed="#getStudentDetails" prefHeight="213.0" prefWidth="345.0" stylesheets="@../style/style.css">
         <columns>
           <TableColumn fx:id="clmRoomTypeIdReseved" prefWidth="110.0" text="Room Type Id" />
           <TableColumn fx:id="clmRoomIdReseved" prefWidth="111.0" text="Room Id" />

@@ -29,6 +29,7 @@ public class ReserveRoomsBOImpl implements ReservationRoomsBO {
     public List<String> getRoomId(String selectedItem) {
         return reservationDAO.getRoomId(selectedItem);
     }
+
 //
 //    @Override
 //    public boolean reservedRoom(StudentDto studentDto, ReservationDto reservationDto) throws SQLException {
@@ -71,23 +72,34 @@ public class ReserveRoomsBOImpl implements ReservationRoomsBO {
 
     @Override
     public boolean reservedRoomWithPayment(StudentDto studentDto, ReservationDto reservationDto, PaymentDetailsDto paymentDetailsDto) {
-        Student student = new Student(studentDto.getStudentId(), studentDto.getName(), studentDto.getAddress(), studentDto.getContact(), studentDto.getDate(), studentDto.getGender());
+        Student student = new Student(studentDto.getStudentId(), studentDto.getName(), studentDto.getAddress(), studentDto.getContact(), studentDto.getDate(), studentDto.getGender(),studentDto.getStatus());
         Room room = new Room(reservationDto.getRoomDto().getRoomId());
         Reservation reservation = new Reservation(reservationDto.getReservationId(),reservationDto.getStartDate(),reservationDto.getEndDate(),reservationDto.getRoomTypeId(),room,student);
-        boolean isSaveStudent = studentDAO.save(student);
-        if (isSaveStudent){
             boolean isSReservedRoom = reservationDAO.save(reservation);
             if (isSReservedRoom){
                 boolean isPayed = paymentDAO.savePayment(new PaymentDetails(paymentDetailsDto.getPaymentDetailsId(), paymentDetailsDto.getKeyMoney(), paymentDetailsDto.getPayAmount(), paymentDetailsDto.getBalance(),reservation));
                 if (isPayed){
                     boolean isUpdateRoomStatus = roomDAO.updateStatus(room);
                     if (isUpdateRoomStatus){
+                    boolean isUpdateStudentStatus = studentDAO.updateStatus(student);
+                    if (isUpdateStudentStatus){
                         return true;
+                    }
                     }
                 }
             }
-        }
         return false;
+    }
+
+    @Override
+    public List<String> getStudentId() {
+        return studentDAO.getIds();
+    }
+
+    @Override
+    public StudentDto getStudentData(String id) {
+        Student student = studentDAO.getStudentData(id);
+        return new StudentDto(student.getStudentId(),student.getName(),student.getAddress(),student.getContact(),student.getDate(),student.getGender(),student.getStatus());
     }
 
     @Override

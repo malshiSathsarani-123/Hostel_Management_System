@@ -19,7 +19,6 @@
                   <Font name="System Bold Italic" size="17.0" />
                </font>
             </Label>
-            <TextField fx:id="txtId" layoutX="157.0" layoutY="71.0" onAction="#txtIdOnAction" promptText="Student Id" styleClass="text" stylesheets="@../style/style.css" />
             <TextField fx:id="txtContact" layoutX="157.0" layoutY="181.0" onAction="#txtContactOnAction" promptText="Contact" styleClass="text" />
             <DatePicker fx:id="cmbDob" layoutX="157.0" layoutY="285.0" onAction="#cmbDobOnAction" prefHeight="25.0" prefWidth="149.0" promptText="Daith Of Birth" stylesheets="@../style/style.css" />
             <JFXComboBox fx:id="cmbGender" layoutX="157.0" layoutY="339.0" onAction="#cmbGenderOnAction" prefHeight="25.0" prefWidth="149.0" promptText="Gender" />
@@ -58,6 +57,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
+            <JFXComboBox fx:id="cmbStudentId" layoutX="157.0" layoutY="71.0" onAction="#cmbStudentIdOnAction" prefHeight="25.0" prefWidth="149.0" promptText="Student Id" />
          </children>
       </AnchorPane>
       <Label layoutX="36.0" layoutY="14.0" prefHeight="39.0" prefWidth="277.0" text="Reseve Room" textAlignment="CENTER">

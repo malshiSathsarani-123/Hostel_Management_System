@@ -82,7 +82,6 @@ public class ManageRoomFormController implements Initializable {
             ));
         }
         tblRoom.setItems(obList);
-        tblRoom.refresh();
     }
 
     private void loadRoomTypeId() {
@@ -113,6 +112,7 @@ public class ManageRoomFormController implements Initializable {
         if (isDelete){
             clear();
             new Alert(Alert.AlertType.CONFIRMATION,"DELETED ROOM!!!").show();
+            getAll();
         }else {
             clear();
             new Alert(Alert.AlertType.WARNING,"DELETED NOT ROOM!!!").show();
@@ -131,6 +131,7 @@ public class ManageRoomFormController implements Initializable {
         if(isSave){
             clear();
             new Alert(Alert.AlertType.CONFIRMATION,"SAVED ROOM!!!").show();
+            getAll();
         }else {
             clear();
             new Alert(Alert.AlertType.WARNING,"SAVED NOT ROOM!!!").show();
@@ -157,6 +158,7 @@ public class ManageRoomFormController implements Initializable {
         if (isUpdate){
             clear();
             new Alert(Alert.AlertType.CONFIRMATION,"UPDATED ROOM!!!").show();
+            getAll();
         }else {
             clear();
             new Alert(Alert.AlertType.WARNING,"UPDATED NOT ROOM!!!").show();

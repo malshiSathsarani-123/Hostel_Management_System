@@ -24,7 +24,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="193.0" layoutY="324.0" onAction="#btnClearOnAction" style="-fx-background-color: #021426;" text="Clear" textFill="WHITE">
+            <JFXButton layoutX="193.0" layoutY="324.0" onAction="#btnSaveOnAction" style="-fx-background-color: #021426;" text="Save" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

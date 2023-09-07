@@ -94,7 +94,7 @@
          </children></AnchorPane>
       <Rectangle fx:id="root" arcHeight="5.0" arcWidth="5.0" fill="#021426" height="37.0" stroke="BLACK" strokeType="INSIDE" width="1214.0" />
       <Separator layoutX="5.0" layoutY="151.0" opacity="0.38" prefHeight="2.0" prefWidth="233.0" />
-      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="235.0" onAction="#btnStudentOnAction" prefHeight="37.0" prefWidth="208.0" stylesheets="@../style/style.css" text="STUDENT" textFill="WHITE">
+      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="244.0" onAction="#btnStudentOnAction" prefHeight="37.0" prefWidth="208.0" stylesheets="@../style/style.css" text="STUDENT" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -110,7 +110,7 @@
             <String fx:value="button" />
          </styleClass>
       </JFXButton>
-      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="299.0" onAction="#btnRoomOnAction" prefHeight="37.0" prefWidth="208.0" styleClass="edge-button" stylesheets="@../style/style.css" text="ROOM" textFill="WHITE">
+      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="303.0" onAction="#btnRoomOnAction" prefHeight="37.0" prefWidth="208.0" styleClass="edge-button" stylesheets="@../style/style.css" text="ROOM" textFill="WHITE">
          <graphic>
             <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -168,12 +168,12 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="44.0" layoutY="51.0" prefHeight="48.0" prefWidth="121.0" text="D24 Hostel" textFill="WHITE">
+      <Label layoutX="44.0" layoutY="64.0" prefHeight="48.0" prefWidth="121.0" text="D24 Hostel" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="75.0" prefHeight="48.0" prefWidth="132.0" text="Management" textFill="WHITE">
+      <Label layoutX="33.0" layoutY="88.0" prefHeight="48.0" prefWidth="132.0" text="Management" textFill="WHITE">
          <font>
             <Font name="System Bold Italic" size="21.0" />
          </font>
@@ -183,6 +183,31 @@
             <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/icons8-close-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton alignment="TOP_LEFT" layoutX="5.0" layoutY="188.0" onAction="#btnHomeOnAction" prefHeight="37.0" prefWidth="208.0" stylesheets="@../style/style.css" text="HOME" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/home.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <styleClass>
+            <String fx:value="edge-button" />
+            <String fx:value="button" />
+         </styleClass>
+      </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="12.0" onAction="#btnBackOnAction" prefHeight="47.0" prefWidth="77.0" text="Button">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/img.png" />
                </image>
             </ImageView>
          </graphic>

@@ -1,22 +1,17 @@
-package lk.ijse.hostel.dto;
+package lk.ijse.hostel.tm;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
-public class StudentDto {
+public class StudentTM {
     private String StudentId;
     private String name;
     private String address;
     private String contact;
     private LocalDate date;
     private String gender;
-    private String status;
-    public StudentDto(String id) {
-        this.StudentId= id;
-    }
 }

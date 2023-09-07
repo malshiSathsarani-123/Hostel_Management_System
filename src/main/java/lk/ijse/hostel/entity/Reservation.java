@@ -2,7 +2,6 @@ package lk.ijse.hostel.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 
 import java.time.LocalDate;
 
