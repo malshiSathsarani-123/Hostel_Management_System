@@ -1,13 +1,12 @@
 package lk.ijse.hostel.bo.custom.impl;
 
-import lk.ijse.hostel.bo.BOFactory;
 import lk.ijse.hostel.bo.custom.ManageRoomBO;
 import lk.ijse.hostel.dao.DAOFactory;
 import lk.ijse.hostel.dao.custom.RoomDAO;
-import lk.ijse.hostel.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.hostel.dto.RoomDto;
 import lk.ijse.hostel.entity.Room;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +25,8 @@ public class ManageRoomBOImpl implements ManageRoomBO {
     }
 
     @Override
-    public boolean delete(RoomDto roomDto) {
-        return roomDAO.delete(new Room(roomDto.getRoomId()));
+    public boolean delete(String id) throws SQLException {
+        return roomDAO.delete(id);
     }
 
     @Override

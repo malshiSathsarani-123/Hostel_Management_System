@@ -5,4 +5,7 @@ import lk.ijse.hostel.entity.User;
 
 public interface UserDAO extends SuperDAO {
     boolean save(User user);
+
+    boolean conform(String name, String password);
+
 }

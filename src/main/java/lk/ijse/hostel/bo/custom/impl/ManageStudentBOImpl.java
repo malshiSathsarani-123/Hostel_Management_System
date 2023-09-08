@@ -8,6 +8,7 @@ import lk.ijse.hostel.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.hostel.dto.StudentDto;
 import lk.ijse.hostel.entity.Student;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,5 +45,10 @@ public class ManageStudentBOImpl implements ManageStudentBO {
     @Override
     public boolean save(StudentDto studentDto) {
         return studentDAO.save(new Student(studentDto.getStudentId(),studentDto.getName(),studentDto.getAddress(),studentDto.getContact(),studentDto.getDate(),studentDto.getGender(),studentDto.getStatus()));
+    }
+
+    @Override
+    public boolean delete(String id) throws SQLException {
+        return studentDAO.delete(id);
     }
 }

@@ -6,10 +6,6 @@ import lk.ijse.hostel.dao.custom.PaymentDAO;
 import lk.ijse.hostel.dao.custom.ReservationDAO;
 import lk.ijse.hostel.dao.custom.RoomDAO;
 import lk.ijse.hostel.dao.custom.StudentDAO;
-import lk.ijse.hostel.dao.custom.impl.PaymentDAOImpl;
-import lk.ijse.hostel.dao.custom.impl.ReservationDAOImpl;
-import lk.ijse.hostel.dao.custom.impl.RoomDAOImpl;
-import lk.ijse.hostel.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.hostel.dto.PaymentDetailsDto;
 import lk.ijse.hostel.dto.ReservationDto;
 import lk.ijse.hostel.dto.StudentDto;
@@ -78,7 +74,7 @@ public class ReserveRoomsBOImpl implements ReservationRoomsBO {
         Reservation reservation = new Reservation(reservationDto.getReservationId(),reservationDto.getStartDate(),reservationDto.getEndDate(),reservationDto.getRoomTypeId(),room,student);
             boolean isSReservedRoom = reservationDAO.save(reservation);
             if (isSReservedRoom){
-                boolean isPayed = paymentDAO.savePayment(new PaymentDetails(paymentDetailsDto.getPaymentDetailsId(), paymentDetailsDto.getKeyMoney(), paymentDetailsDto.getPayAmount(), paymentDetailsDto.getBalance(),reservation));
+                boolean isPayed = paymentDAO.savePayment(new PaymentDetails(paymentDetailsDto.getPaymentDetailsId(), paymentDetailsDto.getKeyMoney(), paymentDetailsDto.getPayAmount(), paymentDetailsDto.getBalance()));
                 if (isPayed){
                     boolean isUpdateRoomStatus = roomDAO.updateStatus(room);
                     if (isUpdateRoomStatus){

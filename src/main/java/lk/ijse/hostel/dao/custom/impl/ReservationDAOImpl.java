@@ -31,7 +31,6 @@ public class ReservationDAOImpl implements ReservationDAO {
         NativeQuery nativeQuery = session.createNativeQuery("select  * from Reservation where RoomId=?1",Reservation.class);
         nativeQuery.setParameter(1,id);
         Reservation reservation = (Reservation) nativeQuery.uniqueResult();
-//        System.out.println(reservation.getStudent().getStudentId());
         transaction.commit();
         session.close();
 
@@ -41,11 +40,11 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     private String nextId(String currentId) {
         if (currentId != null){
-            String[] strings = currentId.split("R");
+            String[] strings = currentId.split("RR0");
             int id = Integer.parseInt(strings[1]);
             id++;
 
-            return "R"+id;
+            return "RR0"+id;
         }
         return "O001";
     }

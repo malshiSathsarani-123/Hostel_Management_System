@@ -28,7 +28,7 @@ public class QueryDAOImpl implements QueryDAO {
     public List<Object[]> getKeyMoneyDetails() {
         Session session= FactoryConfiguration.getInstance().getSession();
         Transaction transaction=session.beginTransaction();
-        NativeQuery query= session.createNativeQuery("select Reservation.studentId, Reservation.roomId, Reservation.roomTypeId, PaymentDetails.KeyMoney, PaymentDetails.balance, Reservation.StartDate   from PaymentDetails inner join Reservation on Reservation.reservationId = PaymentDetails.reservationId");
+        NativeQuery query= session.createNativeQuery("select Reservation.studentId, Reservation.roomId, Reservation.roomTypeId, PaymentDetails.KeyMoney, PaymentDetails.balance, Reservation.StartDate   from PaymentDetails inner join Reservation on Reservation.studentId= PaymentDetails.paymentDetailsId");
         List<Object[]> list= query.list();
         transaction.commit();
         session.close();

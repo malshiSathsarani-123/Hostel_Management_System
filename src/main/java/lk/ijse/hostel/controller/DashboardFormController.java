@@ -94,17 +94,9 @@ public class DashboardFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        createDatabase();
         setDate();
         setTime();
         setCount();
-    }
-
-    private void createDatabase() {
-        Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-        transaction.commit();
-        session.close();
     }
 
     private void setCount() {

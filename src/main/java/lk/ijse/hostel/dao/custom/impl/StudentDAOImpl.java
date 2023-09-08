@@ -1,13 +1,14 @@
 package lk.ijse.hostel.dao.custom.impl;
 
 import lk.ijse.hostel.dao.custom.StudentDAO;
-import lk.ijse.hostel.entity.Room;
+import lk.ijse.hostel.entity.PaymentDetails;
 import lk.ijse.hostel.entity.Student;
 import lk.ijse.hostel.utill.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class StudentDAOImpl implements StudentDAO {
@@ -48,6 +49,18 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
+    public List<String> getIdsReserved() {
+        Session session= FactoryConfiguration.getInstance().getSession();
+        Transaction transaction=session.beginTransaction();
+        Query query = session.createQuery("select id from Student where status=?1");
+        query.setParameter(1,"reserved");
+        List<String> ids = query.list();
+        transaction.commit();
+        session.close();
+        return ids;
+    }
+
+    @Override
     public String getReservationId(String id) {
         Session session= FactoryConfiguration.getInstance().getSession();
         Transaction transaction=session.beginTransaction();
@@ -70,7 +83,20 @@ public class StudentDAOImpl implements StudentDAO {
 
         return true;
     }
+    @Override
+    public boolean delete(String id) throws SQLException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction =session.beginTransaction();
+        Student remove=session.get(Student.class,id);
+        PaymentDetails paymentDetails = session.get(PaymentDetails.class,id);
+        session.remove(remove);
+        session.remove(paymentDetails);
 
+        transaction.commit();
+        session.close();
+
+        return true;
+    }
     @Override
     public List<Student> getAll() {
         Session session= FactoryConfiguration.getInstance().getSession();
@@ -125,4 +151,6 @@ public class StudentDAOImpl implements StudentDAO {
             return false;
         }
     }
+
+
 }

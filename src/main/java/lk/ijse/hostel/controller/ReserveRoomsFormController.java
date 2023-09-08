@@ -171,7 +171,7 @@ public class ReserveRoomsFormController implements Initializable {
         Double payAmount = Double.valueOf(txtPayAmount.getText());
         Double balance = Double.valueOf(txtBalance.getText());
 
-        PaymentDetailsDto paymentDetailsDto = new PaymentDetailsDto(id,keyMoney,payAmount,balance,reservationDto);
+        PaymentDetailsDto paymentDetailsDto = new PaymentDetailsDto(id,keyMoney,balance,payAmount,reservationDto);
 
         boolean isReserved = reservationRoomsBO.reservedRoomWithPayment(studentDto,reservationDto, paymentDetailsDto);
         if (isReserved){
@@ -193,7 +193,7 @@ public class ReserveRoomsFormController implements Initializable {
 
     @FXML
     void cmbRoomIdOnAction(ActionEvent event) {
-
+        dateStart.requestFocus();
     }
 
     @FXML
@@ -216,6 +216,7 @@ public class ReserveRoomsFormController implements Initializable {
         }
 
         loadRoomId();
+        cmbRoomId.requestFocus();
     }
 
     @FXML

@@ -31,7 +31,7 @@ public class RemainingKeyMoneyBOImpl implements RemainingKeyMoneyBO {
 
     @Override
     public List<String> getStudentId() {
-        return studentDAO.getIds();
+        return studentDAO.getIdsReserved();
     }
 
     @Override

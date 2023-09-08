@@ -17,6 +17,7 @@ import lk.ijse.hostel.dto.RoomDto;
 import lk.ijse.hostel.tm.ManageRoomTM;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -107,15 +108,16 @@ public class ManageRoomFormController implements Initializable {
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
         String id = txtId.getText();
-
-        boolean isDelete = roomBO.delete(new RoomDto(id));
-        if (isDelete){
+        boolean isDelete = false;
+        try {
+            isDelete = roomBO.delete(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (isDelete) {
+            new Alert(Alert.AlertType.CONFIRMATION, "OK").show();
             clear();
-            new Alert(Alert.AlertType.CONFIRMATION,"DELETED ROOM!!!").show();
             getAll();
-        }else {
-            clear();
-            new Alert(Alert.AlertType.WARNING,"DELETED NOT ROOM!!!").show();
         }
     }
 

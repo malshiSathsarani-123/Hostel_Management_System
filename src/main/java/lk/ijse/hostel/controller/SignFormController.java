@@ -18,9 +18,6 @@ import java.io.IOException;
 public class SignFormController {
 
     @FXML
-    private JFXButton btnBackOnAction;
-
-    @FXML
     private JFXButton btnClose;
 
     @FXML
@@ -54,6 +51,12 @@ public class SignFormController {
         String password = txtUserPassword.getText();
 
         boolean isSave = signBO.save(new UserDto(name,password));
+        if (isSave){
+            new Alert(Alert.AlertType.CONFIRMATION,"SUCCESSFUL!!!").show();
+            txtUserPassword.setText("");
+            txtUserName.setText("");
+            txtRePassword1.setText("");
+        }
     }
     @FXML
     void btnBackOnAction(ActionEvent event) throws IOException {

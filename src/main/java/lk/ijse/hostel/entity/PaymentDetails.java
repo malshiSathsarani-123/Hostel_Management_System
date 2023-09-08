@@ -17,8 +17,8 @@ public class PaymentDetails {
     private Double payAmount;
 
 
-    @OneToOne
-    @JoinColumn(name = "reservationId")
-    private Reservation reservation;
+//    @OneToOne
+//    @JoinColumn(name = "reservationId")
+//    private Reservation reservation;
 
 }

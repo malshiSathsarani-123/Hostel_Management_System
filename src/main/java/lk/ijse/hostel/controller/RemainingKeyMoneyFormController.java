@@ -125,11 +125,8 @@ public class RemainingKeyMoneyFormController implements Initializable {
         Double balance1 = balance-payAmount;
         Double keyMoney = Double.valueOf(txtKeyMoney.getText());
         Double payAmount1 = keyMoney - balance1;
-        String resId = remainingKeyMoneyBO.getReservationId(id);
 
-        Reservation reservation = new Reservation(resId);
-
-        boolean isUpdate = remainingKeyMoneyBO.updatePayment(new PaymentDetails(id,keyMoney,balance1,payAmount1,reservation));
+        boolean isUpdate = remainingKeyMoneyBO.updatePayment(new PaymentDetails(id,keyMoney,balance1,payAmount1));
         getAll();
         clear();
         if (isUpdate){
@@ -141,6 +138,8 @@ public class RemainingKeyMoneyFormController implements Initializable {
         txtType.setText("");
         txtKeyMoney.setText("");
         txtBalance.setText("");
+        txtName.setText("");
+        txtPayAmoub.setText("");
     }
 
     @FXML

@@ -17,6 +17,7 @@ import lk.ijse.hostel.tm.ManageRoomTM;
 import lk.ijse.hostel.tm.StudentTM;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -127,15 +128,16 @@ public class ManageStudentFormController implements Initializable {
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
         String id = txtId.getText();
-
-        boolean isDelete = studentBO.delete(new StudentDto(id));
-        if (isDelete){
+        boolean isDelete = false;
+        try {
+            isDelete = studentBO.delete(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        if (isDelete) {
+            new Alert(Alert.AlertType.CONFIRMATION, "OK").show();
             clear();
-            new Alert(Alert.AlertType.CONFIRMATION,"DELETED STUDENT!!!").show();
             getAll();
-        }else {
-            clear();
-            new Alert(Alert.AlertType.WARNING,"DELETED NOT STUDENT!!!").show();
         }
     }
 
@@ -209,18 +211,16 @@ public class ManageStudentFormController implements Initializable {
 
     @FXML
     void txtContactOnAction(ActionEvent event) {
-
+        cmbDob.requestFocus();
     }
 
     @FXML
     void cmbDobOnAction(ActionEvent event) {
-
+        cmbGender.requestFocus();
     }
 
     @FXML
     void cmbGenderOnAction(ActionEvent event) {
 
     }
-
-
 }

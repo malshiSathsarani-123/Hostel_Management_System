@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lk.ijse.hostel.utill.SplashScreenDemo;
 
 public class Launcher extends Application {
 
@@ -14,6 +15,8 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        new SplashScreenDemo();
+
         Parent root = FXMLLoader.load(getClass().getResource("/view/login_form.fxml"));
         Scene scene =new Scene(root);
         stage.setScene(scene);

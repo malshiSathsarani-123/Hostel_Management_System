@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class RoomDAOImpl implements RoomDAO {
@@ -34,17 +35,15 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public boolean delete(Room room){
+    public boolean delete(String id) throws SQLException {
         Session session = FactoryConfiguration.getInstance().getSession();
-        Transaction transaction = session.beginTransaction();
-        int executeUpdate = session.createNativeQuery("delete from Room where roomId='" + room.getRoomId() + "'", Room.class).executeUpdate();
+        Transaction transaction =session.beginTransaction();
+        Room remove=session.get(Room.class,id);
+        session.remove(remove);
         transaction.commit();
         session.close();
-        if (executeUpdate>0){
-            return true;
-        }else {
-            return false;
-        }
+
+        return true;
     }
 
     @Override
